@@ -1,4 +1,4 @@
-public class Sneaker {
+public class Sneaker implements Product {
     private final String name;
     private final String brand;
     private final String category;
@@ -15,12 +15,20 @@ public class Sneaker {
         this.rating = builder.rating;
     }
 
-    public String getName() { return name; }
-    public String getBrand() { return brand; }
-    public String getCategory() { return category; }
-    public double getPrice() { return price; }
-    public int getSize() { return size; }
-    public double getRating() { return rating; }
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+    @Override
+    public void displayProduct() {
+        System.out.println(this);
+    }
 
     @Override
     public String toString() {
@@ -66,3 +74,4 @@ public class Sneaker {
         }
     }
 }
+
